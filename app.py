@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-counter = {'get_counter': 0, 'post_counter': 0}
+counter = {'GET': 0, 'POST': 0, 'DELETE': 0, 'PUT': 0}
 
 
 @app.route('/')
@@ -13,12 +13,16 @@ def route_index():
 @app.route('/request-counter', methods=['GET', 'POST'])
 def request_counter():
     if request.method == 'GET':
-        counter['get_counter'] += 1
+        counter['GET'] += 1
 
     elif request.method == 'POST':
-        counter['post_counter'] += 1
+        counter['POST'] += 1
 
     return redirect('/')
+
+@app.route('/statistics')
+def route_statistics():
+    return render_template('statistics.html', counter=counter)
 
 
 if __name__ == '__main__':

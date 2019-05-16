@@ -13,10 +13,10 @@
             </tr>
             {% for method, count in counter.items() %}
                 <tr>
-                    <td>method</td>
-                    <td>count</td>
+                    <td>{{ method }}</td>
+                    <td>{{ count }}</td>
                 </tr>
-            {% enfor %}
+            {% endfor %}
         </table>
         <a href="{{ url_for('route_index')}}">Back to Home</a>
     </body>
