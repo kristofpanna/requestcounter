@@ -6,11 +6,11 @@
 </head>
 <body>
     <h1>Request Counter Home</h1>
-    <a href="/request-counter">Get request</a>
-    <form action="/request-counter" method="post">
+    <a href="{{ url_for('request_counter') }}">Get request</a>
+    <form action="{{ url_for('request_counter') }}" method="post">
         <button type="submit">Post request</button>
     </form>
-    <a href="/statistics"></a>
+    <a href="/statistics">Statistics</a>
 
 </body>
 </html>
