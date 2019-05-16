@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Statistics</title>
+    </head>
+    <body>
+        <h1>Statistics</h1>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Count</th>
+            </tr>
+            {% for method, count in counter.items() %}
+                <tr>
+                    <td>method</td>
+                    <td>count</td>
+                </tr>
+            {% enfor %}
+        </table>
+        <a href="{{ url_for('route_index')}}">Back to Home</a>
+    </body>
+</html>
